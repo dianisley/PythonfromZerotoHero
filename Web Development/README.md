@@ -4,7 +4,7 @@
 * [Intro to Flask](#bookmark-introduction-to-flask)
 * [Why Flask](#gem-why-flask)
 * [Getting Start](#wrench-getting-start)
-8 [Using Templates](#clipboard-using-templates)
+* [Using Templates](#clipboard-using-templates)
 * [Key Concepts](#key-key-concepts)
 * [Setup](#setup)
 * [Usage](#usage)
@@ -115,7 +115,7 @@ The [template engine](https://en.wikipedia.org/wiki/Template_processor) connects
 
 In order to use templates we must create a folder called templates. This is where flask looks for our html files.
 
-After we do this we create a function called index.
+After we do this we create a function called [index](https://github.com/dianisley/PythonfromZerotoHero/blob/5c15c3b3a24d1301e9c046fdd32ba8871992fd16/Web%20Development/template/index.html.)
 
     @app.route("/index")
     def index():
