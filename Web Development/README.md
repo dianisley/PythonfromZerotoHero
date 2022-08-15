@@ -4,7 +4,8 @@
 * [Intro to Flask](#bookmark-introduction-to-flask)
 * [Why Flask](#gem-why-flask)
 * [Getting Start](#wrench-getting-start)
-* [Screenshots](#screenshots)
+8 [Using Templates](#clipboard-using-templates)
+* [Key Concepts](#key-key-concepts)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
@@ -97,11 +98,37 @@ Now, before moving forward lets understand the lines executed above:
     if __name__ == "__main__":
         app.run()    
 
+Now we can finally run our application through the `python app.py` command. By default Flask will use port 5000 from our localhost, so navigate to http://127.0.0.1:5000/ to see our application working. We have now managed to run our first application in Flask, it's amazing how in just a few lines of code we can get this result!
 
-# Key Concepts
+Last but not least, we can activate debug mode to facilitate the development process of our applications.
 
-- **Web Server Gateway Interface(WSGI):** WSGI is a standard that describes the specifications concerning the communication between a client application and a web server. The benefit of using WSGI is that it helps in the scalability of applications with an increase in traffic, maintains efficiency in terms of speed, and maintains the flexibility of components.
-- Awesome feature 2
+    if __name__ == "__main__":
+        app.run(debug=True)  
+
+# :clipboard: Using templates
+
+Templates are an essential element in Flask and many other frameworks, they are what we call the presentation or view layer of our application. A template is a file that contains static text, as well as placeholders for rendering dynamic content.
+
+![Template](https://user-images.githubusercontent.com/103318089/184644634-fac68ea0-87f2-4cad-ac63-4ad4d3f3e124.png)
+
+The [template engine](https://en.wikipedia.org/wiki/Template_processor) connects to the data model and processes the specific code in the templates and then directs the output to a specific file that is normally rendered in a browser so that we can see the presentation of the data.
+
+In order to use templates we must create a folder called templates. This is where flask looks for our html files.
+
+After we do this we create a function called index.
+
+    @app.route("/index")
+    def index():
+        return render_template('index.html')
+    
+
+# :key: Key Concepts
+
+- **Web Server Gateway Interface(WSGI):** [WSGI](https://www.fullstackpython.com/wsgi-servers.html) is a standard that describes the specifications concerning the communication between a client application and a web server. The benefit of using WSGI is that it helps in the scalability of applications with an increase in traffic, maintains efficiency in terms of speed, and maintains the flexibility of components.
+- **Jinja2:** Flask helps connect your backend workflow with the frontend part and act as client-side scripting means It helps you to access the data that the user provides on frontend designed application and process the inputs by passing values to backend application and again rendering the output to HTML content is the task of Jinja templates. [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) has vast functionalities like a template inheritance which means when you create multiple templates (pages) for the application then some code or design is the same on each page so you do not need to write it again. It can be inherited from another template.
+
+
+
 - Awesome feature 3
 
 
