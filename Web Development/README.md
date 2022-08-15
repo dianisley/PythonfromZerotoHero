@@ -120,7 +120,27 @@ After we do this we create a function called index.
     @app.route("/index")
     def index():
         return render_template('index.html')
-    
+
+Now let's modify our `app.py` file so that we can serve this template.
+
+    from flask import Flask, render_template
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return render_template('index.html')
+
+    if __name__ == '__main__':
+      app.run(debug=True)
+
+Note that we had to import the render_template() function in order to work with the templates.
+
+This function takes as an argument the name of the template to be rendered or an iterable with template names, in which the first one will be rendered.
+The context, in other words: the variables that will be available in the template context
+
+To know more details about the function visit: [flask.render_template](https://flask.palletsprojects.com/en/1.1.x/api/#flask.render_template)
+
+Now run the application with the python app.py command and visit http://127.0.0.1:5000/ to see the result
 
 # :key: Key Concepts
 
