@@ -141,7 +141,7 @@ Now run the application with the python app.py command and visit http://127.0.0.
 
 # :link: Connecting Flask app to a Database
 
-Now use SQLAlchemy with Flask so that you don't need to worry about making raw database queries. SQLAlchemy is an Object Relational Mapper (ORM) that will allow you to work with classes instead of database records.
+Now use SQLAlchemy with Flask so that you don't need to worry about making raw database queries. SQLAlchemy is an Object Relational Mapping (ORM) that will allow you to work with classes instead of database records.
 
 Flask-SQLAlchemy makes it even simpler to use the SQLAlchemy library with Flask, to work with it we need to install it, let's type:
 
@@ -149,17 +149,30 @@ Flask-SQLAlchemy makes it even simpler to use the SQLAlchemy library with Flask,
     
 Once successfully installed, we now have the library at our disposal to work with. Let's then create a new file called `models.py` inside the Examples folder, this file that will represent a model of a simple library database.
 
-Let's start with the basic settings
+Let's start with the basic settings:
 
+:one: We first import the necessary libraries, which in this case is Flask itself and Flask-SQLAlchemy
     from flask_sqlalchemy import SQLAlchemy
+ 
+ :two: then we create our app object and indicate where the database file should be located (application root).
     app = Flask (__name__)
     app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
+  
+ :three:Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
+
     db = SQLAlchemy(app)
 
-
-We first import the necessary libraries, which in this case is Flask itself and Flask-SQLAlchemy, then we create our app object and indicate where the database file should be located (application root). Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
-
 Now that we have our settings established, let's start working effectively in our database, let's create an Author class that will represent an Author table in our database, this will be our model.
+
+Our table is then composed of the following fields:
+- **id,** unique integer value representing our primary key
+- **name,** String of up to 30 characters that cannot be null
+- **lastname,** String of up to 30 characters that cannot be null
+- **book,** This field is a relationship with the Book class that we are going to create, the backref argument defines the name of the field that will be added to the objects of the 'many' class that will point back to the 'single' object.
+
+Finally, the __repr__ magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
+
+Summaryzing our code looks like this: 
 
     class Author(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -170,16 +183,7 @@ Now that we have our settings established, let's start working effectively in ou
     def __repr__(self):
         return f'Author("{self.nome}", "{self.sobrenome}")'
 
-Our table is then composed of the following fields:
-
-- id, unique integer value representing our primary key
-- name, String of up to 30 characters that cannot be null
-- lastname, String of up to 30 characters that cannot be null
-- book, This field is a relationship with the Book class that we are going to create, the backref argument defines the name of the field that will be added to the objects of the 'many' class that will point back to the 'single' object.
-
-Finally, the __repr__ magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
-
-To create/use the database mentioned in the URI, run the create_all() method.
+One last step, to create/use the database mentioned in the URI, run the create_all() method.
 
     db.create_all()
     
