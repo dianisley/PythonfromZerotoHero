@@ -40,6 +40,10 @@ Below we will discuss the reasons why Flask is so popular among the developers a
 
 ## :wrench: Getting Start
 
+:point_right: The easiest way to install [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask) is to use [PIP](https://pip.pypa.io/en/stable/getting-started/) the official package-management tool.
+
+`pip install flask`
+
 
 
 
