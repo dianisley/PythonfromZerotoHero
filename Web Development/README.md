@@ -152,8 +152,10 @@ Once successfully installed, we now have the library at our disposal to work wit
 Let's start with the basic settings:
     
     from flask_sqlalchemy import SQLAlchemy
+    
     app = Flask (__name__)
     app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
+    
     db = SQLAlchemy(app)
     
     class Author(db.Model):
@@ -164,6 +166,10 @@ Let's start with the basic settings:
 
     def __repr__(self):
         return f'Author("{self.name}", "{self.lastname}")
+        
+    db.create_all()
+    
+ Now let's go step by step:
 
 :one: We first import the necessary libraries, which in this case is Flask itself and Flask-SQLAlchemy
     
@@ -198,7 +204,7 @@ Now that we have our settings established, let's start working effectively in ou
     def __repr__(self):
         return f'Author("{self.name}", "{self.lastname}")'
 
-One last step, to create/use the database mentioned in the URI, run the create_all() method.
+:six: One last step, to create/use the database mentioned in the URI, run the create_all() method.
 
     db.create_all()
     
