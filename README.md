@@ -22,7 +22,7 @@ Each Python topic in this repository has the following structure
 
 ## :rocket: Table of Contents
 
-- Functional Programming [Functional Programming](ReadmeFP.md)
+- Functional Programming [Functional Programming](Functional Programming/ReadmeFP.md)
 - Object Oriented Programming [a relative link](other_file.md)
 - Object Relational Mapping [a relative link](other_file.md)
 - Github and Pypi [a relative link](other_file.md)
