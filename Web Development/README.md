@@ -264,7 +264,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
 - Note that variables will be assigned only if the form is valid, so we use the `validate_on_submit()` method
 - If the form is not valid or the request is GET, it will just render the template with the form
 
-Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the templates folder.
+Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the template folder.
 
 Finally we can run our application with the `python app.py` command, let's navigate to http://127.0.0.1:5000/wtf to see our form. Feel free to experiment with submissions and test the form and to delve deeper into the tools visit their respective documentation: [WTForms](https://wtforms.readthedocs.io/en/stable/) and [Flask-WTF](https://flask-wtf.readthedocs.io/en/1.0.x/)
 
