@@ -13,7 +13,7 @@
 
 # :bookmark: Introduction to Flask
 
-- As a data science professional, your task is not only to create a machine learning models for an specific problem; it is also important to present your solution to    the public, either a customer or your employeer adn make it available to everyone in order to have a bigger reach and impact. There is no other way then that implementing your solution in the cloud and for this you need the help of a web framework that can bring your solution to your audience with simple steps.
+- As a data science professional, your task is not only to create a machine learning models for an specific problem; it is also important to present your solution to    the public, either a customer or your employeer and make it available to everyone in order to have a bigger reach and impact. There is no other way than implementing your solution in the cloud and for this you need the help of a web framework that can bring your solution to your audience with simple steps.
 
 - Now, being Python one of the most important programming languages (as per the [Stack Overflow Developer Survey 2022](https://survey.stackoverflow.co/2022/#most-popular-technologies-language), it is the forth-most-popular programming language in the world with 48.07% popularity), it is a must for data scientist professionals to explore the topmost python web app framework, and Flask is one such framework that outranks the other frameworks as per the [Python Developer Survey 2021](https://lp.jetbrains.com/python-developers-survey-2021)
 
