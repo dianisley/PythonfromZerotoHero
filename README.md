@@ -221,9 +221,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```txt
 Repo Name made with love.
 ---------------------------------------
-Author : Your Name
-Email : yourmail@gmail.com
-Github : https://github.com/your-github-name/repo-name.git
+Author : Diana Fernandez
+Email : dianaf@student.ie.edu
+Github : https://github.com/dianisley/PythnfromZerotoHero.git
 ```
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
