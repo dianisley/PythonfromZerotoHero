@@ -6,6 +6,7 @@
 * [Getting Start](#wrench-getting-start)
 * [Using Templates](#clipboard-using-templates)
 * [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
+* [Using WTF Templates](#clipboard-using-templates)
 * [Key Concepts](#key-key-concepts)
 * [Acknowledgements](#acknowledgements)
 
@@ -182,7 +183,7 @@ To create/use the database mentioned in the URI, run the create_all() method.
 
     db.create_all()
     
-# Using WTF Templates
+# :clipboard: Using WTF Templates
 
 We have seen already some cool template functionalties. We are now going to improve our knowledge and work with the Flask-WTF library, which will allow us to manage our forms in a much simpler and more friendly way and will also collaborate with the security of our application.
 
