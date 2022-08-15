@@ -261,7 +261,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
 
 Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the templates folder.
 
-Finally we can run our application with the `python app.py` command, let's navigate to http://127.0.0.1:5000/wtf to see our form. Feel free to experiment with submissions and test the form and to delve deeper into the tools visit their respective documentation: WTForms and Flask-WTF
+Finally we can run our application with the `python app.py` command, let's navigate to http://127.0.0.1:5000/wtf to see our form. Feel free to experiment with submissions and test the form and to delve deeper into the tools visit their respective documentation: [WTForms](https://wtforms.readthedocs.io/en/stable/) and [Flask-WTF](https://flask-wtf.readthedocs.io/en/1.0.x/)
 
 # :key: Key Concepts
 
