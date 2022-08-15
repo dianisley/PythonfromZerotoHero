@@ -240,6 +240,7 @@ Now that all our imports are properly organized, it is time to define our form t
 Now that we have our form defined, let's define two new routes to try out. Again we edit our `app.py` file:
 
 :one: The first wtf() route will process the form (if it's a POST request) or will render the form (if it's a GET request)
+    
     @app.route('/wtf', methods=['GET','POST'])
     def wtf():
         form = BookForm()
@@ -252,6 +253,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
         return redirect(url_for('thankyou'))
 
     return render_template('wtf.html', form=form)
+
 :two: The second thankyou() route will be activated through the redirect() function, in which we will display the data submitted by the user through the session variables
 
     @app.route('/thankyou')
