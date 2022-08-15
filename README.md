@@ -218,14 +218,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## :penguin: Author
 
-```txt
-Repo Name made with love.
----------------------------------------
 Author : Diana Fernandez
 Email : dianaf@student.ie.edu
-Github : https://github.com/dianisley/PythnfromZerotoHero.git
-```
+Github : https://github.com/dianisley/PythonfromZerotoHero.git
+
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-<a href="#contents">:top: <sub>back to top</sub></a>
