@@ -264,7 +264,10 @@ Finally we can run our application with the `python app.py` command, let's navig
 - **Jinja2:** Flask helps connect your backend workflow with the frontend part and act as client-side scripting means It helps you to access the data that the user provides on frontend designed application and process the inputs by passing values to backend application and again rendering the output to HTML content is the task of Jinja templates. [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) has vast functionalities like a template inheritance which means when you create multiple templates (pages) for the application then some code or design is the same on each page so you do not need to write it again. It can be inherited from another template.
 
 
-## Acknowledgements
+# Acknowledgements
 This project was based on 
-- [this tutorial](https://www.example.com).
+- [A Comprehensive Guide on using Flask for Data Science](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-using-flask-for-data-science/#:~:text=Flask%20provides%20different%20libraries%2C%20tools,or%20any%20commercial%20website%2C%20etc)
+- [Flask SQLAlchemy](https://pythonbasics.org/flask-sqlalchemy/)
+- [Flask in Production: Minimal Web APIs](https://towardsdatascience.com/flask-in-production-minimal-web-apis-2e0859736df)
+- [Rendering Pages in Flask Using Jinja](https://hackersandslackers.com/flask-jinja-templates/)
 
