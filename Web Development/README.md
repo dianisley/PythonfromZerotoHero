@@ -218,8 +218,6 @@ In order to use the Flask-WTF Library in our application, it is necessary to ins
     
 Once successfully installed, we can now use it in our project, let's make some changes to our `app.py` file, however, before that it's important to say that although the structure of our application seems a little disorganized, it's because we haven't entered it yet. in terms of structuring our application, for now we are only focusing on the fundamentals, which are essential for us to perform various jobs, so we will continue working on the `app.py` file
 
-First let's change our imports so we can work with new features
-
     from flask import Flask, render_template, request, redirect, session, url_for
     from flask_wtf import FlaskForm
     from wtforms import StringField, BooleanField, SelectField, TextField, TextAreaField, SubmitField
@@ -233,7 +231,25 @@ First let's change our imports so we can work with new features
         genre = SelectField('Type:',choices=[('adventure','Adventure'),('scifi','Scifi'),('romance','Romance')])
         summary = TextAreaField()
         submit = SubmitField('Send')
-        
+    
+    @app.route('/wtf', methods=['GET','POST'])
+    def wtf():
+        form = BookForm()
+        if form.validate_on_submit():
+            session['title'] = form.title.data 
+            session['author'] = form.author.data 
+            session['genre'] = form.genre.data 
+            session['summary'] = form.summay.data 
+
+        return redirect(url_for('thankyou'))
+
+        return render_template('wtf.html', form=form)
+
+    @app.route('/thankyou')
+    def thankyou():
+        return render_template('thankyou.html')
+
+Now, step by step:
         
 :one: In the first line we import session that will allow us to work with temporary session variables and the `url_for()` function that allows us to build a URL to a specific function of our application
 
@@ -251,7 +267,7 @@ First let's change our imports so we can work with new features
    
     from wtforms.validators import DataRequired
     
-Now that all our imports are properly organized, it is time to define our form that will be represented through a Python Class that we will call Bookform, again we are going to edit the `app.py` file
+:five: Now that all our imports are properly organized, it is time to define our form that will be represented through a Python Class that we will call Bookform, again we are going to edit the `app.py` file
 
     app.config['SECRET_KEY'] = 'secretkey'
 
@@ -262,23 +278,6 @@ Now that all our imports are properly organized, it is time to define our form t
         summary = TextAreaField()
         submit = SubmitField('Send')
         
-    @app.route('/wtf', methods=['GET','POST'])
-    def wtf():
-        form = BookForm()
-        if form.validate_on_submit():
-            session['title'] = form.title.data 
-            session['author'] = form.author.data 
-            session['genre'] = form.genre.data 
-            session['summary'] = form.summay.data 
-
-        return redirect(url_for('thankyou'))
-
-    return render_template('wtf.html', form=form)
-
-    @app.route('/thankyou')
-    def thankyou():
-        return render_template('thankyou.html')
-
 - We start by assigning the value 'secretkey' to our SECRET_KEY configuration variable
 - Through the class keyword we define our form with the name of BookForm that receives as a parameter FlaskForm, which we imported earlier
 - We define the title variable which will be a String Field with the label 'Book Title', see that we use the `DataRequired()` validator to indicate that the field must be filled in
@@ -289,7 +288,7 @@ Now that all our imports are properly organized, it is time to define our form t
 
 Now that we have our form defined, let's define two new routes to try out. Again we edit our `app.py` file:
 
-:one: The first `wtf()` route will process the form (if it's a POST request) or will render the form (if it's a GET request)
+:six: The first `wtf()` route will process the form (if it's a POST request) or will render the form (if it's a GET request)
     
     @app.route('/wtf', methods=['GET','POST'])
     def wtf():
@@ -304,7 +303,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
 
     return render_template('wtf.html', form=form)
 
-:two: The second `thankyou()` route will be activated through the `redirect()` function, in which we will display the data submitted by the user through the session variables
+:seven: The second `thankyou()` route will be activated through the `redirect()` function, in which we will display the data submitted by the user through the session variables
 
     @app.route('/thankyou')
     def thankyou():
