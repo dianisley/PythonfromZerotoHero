@@ -160,7 +160,7 @@ Let's start with the basic settings:
     app = Flask (__name__)
     app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
   
-:three:Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
+:three: Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
 
     db = SQLAlchemy(app)
 
@@ -202,7 +202,7 @@ Once successfully installed, we can now use it in our project, let's make some c
 
 First let's change our imports so we can work with new features
 
-:one: In the first line we import session that will allow us to work with temporary session variables and the url_for() function that allows us to build a URL to a specific function of our application
+:one: In the first line we import session that will allow us to work with temporary session variables and the `url_for()` function that allows us to build a URL to a specific function of our application
 
     from flask import Flask, render_template, request, redirect, session, url_for
 
@@ -261,7 +261,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
         return render_template('thankyou.html')
 
 - The form variable will store the object that represents our Form, in this case BookForm
-- Note that variables will be assigned only if the form is valid, so we use the validate_on_submit() method
+- Note that variables will be assigned only if the form is valid, so we use the `validate_on_submit()` method
 - If the form is not valid or the request is GET, it will just render the template with the form
 
 Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the templates folder.
