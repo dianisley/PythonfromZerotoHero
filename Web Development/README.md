@@ -194,7 +194,7 @@ One last step, to create/use the database mentioned in the URI, run the create_a
 
 We have seen already some cool template functionalties. We are now going to improve our knowledge and work with the Flask-WTF library, which will allow us to manage our forms in a much simpler and more friendly way and will also collaborate with the security of our application.
 
-In order to use the Flask-WTF Library in our application, it is necessary to install it, we recommend that you install it with your Virtual Environment activated, so run this command:
+In order to use the Flask-WTF Library in our application, it is necessary to install it:
 
     pip install flask-wtf
     
