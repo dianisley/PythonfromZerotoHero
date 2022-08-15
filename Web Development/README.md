@@ -231,8 +231,8 @@ Now that all our imports are properly organized, it is time to define our form t
         
 - We start by assigning the value 'secretkey' to our SECRET_KEY configuration variable
 - Through the class keyword we define our form with the name of BookForm that receives as a parameter FlaskForm, which we imported earlier
-- We define the title variable which will be a String Field with the label 'Book Title', see that we use the DataRequired() validator to indicate that the field must be filled in
-- We define the author variable which will be a String Field with the label 'Author Name', see that we use the DataRequired() validator to indicate that the field must be filled in
+- We define the title variable which will be a String Field with the label 'Book Title', see that we use the `DataRequired()` validator to indicate that the field must be filled in
+- We define the author variable which will be a String Field with the label 'Author Name', see that we use the `DataRequired()` validator to indicate that the field must be filled in
 - We define the genre variable that will be a Selection Field containing the options 'Adventure', 'Scientific' and 'Romance'
 - We define the summary variable that will be a Text Area Field
 - Finally, we define the submit variable that will represent our submit button containing the 'Submit' label
