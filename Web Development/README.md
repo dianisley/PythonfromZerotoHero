@@ -152,27 +152,30 @@ Once successfully installed, we now have the library at our disposal to work wit
 Let's start with the basic settings:
 
 :one: We first import the necessary libraries, which in this case is Flask itself and Flask-SQLAlchemy
+    
     from flask_sqlalchemy import SQLAlchemy
  
- :two: then we create our app object and indicate where the database file should be located (application root).
+:two: then we create our app object and indicate where the database file should be located (application root).
+    
     app = Flask (__name__)
     app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
   
- :three:Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
+:three:Finally, we create the db object that allows us to integrate SQLAlchemy in our Flask application.
 
     db = SQLAlchemy(app)
 
 Now that we have our settings established, let's start working effectively in our database, let's create an Author class that will represent an Author table in our database, this will be our model.
 
 Our table is then composed of the following fields:
+
 - **id,** unique integer value representing our primary key
 - **name,** String of up to 30 characters that cannot be null
 - **lastname,** String of up to 30 characters that cannot be null
 - **book,** This field is a relationship with the Book class that we are going to create, the backref argument defines the name of the field that will be added to the objects of the 'many' class that will point back to the 'single' object.
 
-Finally, the __repr__ magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
+Finally, the `__repr__` magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
 
-Summaryzing our code looks like this: 
+Summaryzing, our code looks like this: 
 
     class Author(db.Model):
         id = db.Column(db.Integer, primary_key=True)
