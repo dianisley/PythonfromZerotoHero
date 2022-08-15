@@ -239,6 +239,7 @@ Now that all our imports are properly organized, it is time to define our form t
 
 Now that we have our form defined, let's define two new routes to try out. Again we edit our `app.py` file:
 
+:one: The first wtf() route will process the form (if it's a POST request) or will render the form (if it's a GET request)
     @app.route('/wtf', methods=['GET','POST'])
     def wtf():
         form = BookForm()
@@ -251,16 +252,15 @@ Now that we have our form defined, let's define two new routes to try out. Again
         return redirect(url_for('thankyou'))
 
     return render_template('wtf.html', form=form)
+:two: The second thankyou() route will be activated through the redirect() function, in which we will display the data submitted by the user through the session variables
 
     @app.route('/thankyou')
     def thankyou():
         return render_template('thankyou.html')
 
-- The first wtf() route will process the form (if it's a POST request) or will render the form (if it's a GET request)
-- The second thanksyou() route will be activated through the redirect() function, in which we will display the data submitted by the user through the session variables
-- The form variable will store the object that represents our Form, in this case LivroForm
+- The form variable will store the object that represents our Form, in this case BookForm
 - Note that variables will be assigned only if the form is valid, so we use the validate_on_submit() method
-- If the form is not valid or the request is GET, let's just render the template with the form
+- If the form is not valid or the request is GET, it will just render the template with the form
 
 Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou.html](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the templates folder.
 
