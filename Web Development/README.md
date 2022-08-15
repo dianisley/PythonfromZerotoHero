@@ -44,19 +44,63 @@ the python programming language.
 
 # :wrench: Getting Start
 
-## Instalation 
+## Installation 
 
 The easiest way to install [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask) is to use [PIP](https://pip.pypa.io/en/stable/getting-started/) the official package-management tool.
 
-```pip install flask```
+    pip install flask
+
+After this quick installation, we now have Flask available to work on our machine. Before we start our experiments with Flask, let's try out some important pip commands
+
+Open a Python console (type python in terminal) and check the installed version as below:
+   
+    import flask
+    flask.__version__
+
+## Flask Hello World
+
+Use your preferred editor to create a file called `app.py` with this content:
+ 
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def greeting():
+        return "<h1 style='color:green'>Hello World!</h1>"
+
+    if __name__ == "__main__":
+        app.run()
 
 
+Now, before moving forward lets understand the lines executed above:
+
+:one: We start by importing the Flask class. An instance of this class will be our WSGI application.
+    
+    from flask import Flask
+
+:two: Next we create an instance of this class. The first argument is the name of the application module or package. If you are using a single module (as in our example) you should use `__name__` because depending on whether it is started as an application or imported as a module, the name will be different, this is necessary so that Flask knows where to look for Templates and Static files.
+
+    app = Flask(__name__)
+
+:three: We use the route() decorator to tell Flask which URL will activate our function.
+
+    @app.route("/")
 
 
+:four: The function is given a name which is also used to generate URLs for that particular function, and returns the message we wish to present in the user's browser.
 
-## Features
-List the ready features here:
-- Awesome feature 1
+    def greeting():
+        return "<h1 style='color:green'>Hello World!</h1>"
+        
+:five: The **if** block is basically a way for Python to say 'Only run this code if I run it'. As we saw before `__name__` is a variable that Python automatically creates and it is equal to `__main__` when we run the code.
+
+    if __name__ == "__main__":
+        app.run()    
+
+
+# Key Concepts
+
+- **Web Server Gateway Interface(WSGI):** WSGI is a standard that describes the specifications concerning the communication between a client application and a web server. The benefit of using WSGI is that it helps in the scalability of applications with an increase in traffic, maintains efficiency in terms of speed, and maintains the flexibility of components.
 - Awesome feature 2
 - Awesome feature 3
 
