@@ -6,7 +6,7 @@
 * [Getting Start](#wrench-getting-start)
 * [Using Templates](#clipboard-using-templates)
 * [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
-* [Using WTF Templates](#clipboard-using-templates)
+* [Using WTF Templates](#clipboard-using-wtf-templates)
 * [Key Concepts](#key-key-concepts)
 * [Acknowledgements](#acknowledgements)
 
