@@ -254,7 +254,7 @@ Now that we have our form defined, let's define two new routes to try out. Again
 
     return render_template('wtf.html', form=form)
 
-:two: The second `thankyou()` route will be activated through the redirect() function, in which we will display the data submitted by the user through the session variables
+:two: The second `thankyou()` route will be activated through the `redirect()` function, in which we will display the data submitted by the user through the session variables
 
     @app.route('/thankyou')
     def thankyou():
