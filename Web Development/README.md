@@ -220,6 +220,21 @@ Once successfully installed, we can now use it in our project, let's make some c
 
 First let's change our imports so we can work with new features
 
+    from flask import Flask, render_template, request, redirect, session, url_for
+    from flask_wtf import FlaskForm
+    from wtforms import StringField, BooleanField, SelectField, TextField, TextAreaField, SubmitField
+    from wtforms.validators import DataRequired
+    
+    app.config['SECRET_KEY'] = 'secretkey'
+
+    class Bookform(FlaskForm):
+        title = StringField('Book Title', validators=[DataRequired()])
+        author = StringField('Author Name', validators=[DataRequired()])
+        genre = SelectField('Type:',choices=[('adventure','Adventure'),('scifi','Scifi'),('romance','Romance')])
+        summary = TextAreaField()
+        submit = SubmitField('Send')
+        
+        
 :one: In the first line we import session that will allow us to work with temporary session variables and the `url_for()` function that allows us to build a URL to a specific function of our application
 
     from flask import Flask, render_template, request, redirect, session, url_for
@@ -247,6 +262,23 @@ Now that all our imports are properly organized, it is time to define our form t
         summary = TextAreaField()
         submit = SubmitField('Send')
         
+    @app.route('/wtf', methods=['GET','POST'])
+    def wtf():
+        form = BookForm()
+        if form.validate_on_submit():
+            session['title'] = form.title.data 
+            session['author'] = form.author.data 
+            session['genre'] = form.genre.data 
+            session['summary'] = form.summay.data 
+
+        return redirect(url_for('thankyou'))
+
+    return render_template('wtf.html', form=form)
+
+    @app.route('/thankyou')
+    def thankyou():
+        return render_template('thankyou.html')
+
 - We start by assigning the value 'secretkey' to our SECRET_KEY configuration variable
 - Through the class keyword we define our form with the name of BookForm that receives as a parameter FlaskForm, which we imported earlier
 - We define the title variable which will be a String Field with the label 'Book Title', see that we use the `DataRequired()` validator to indicate that the field must be filled in
