@@ -1,46 +1,36 @@
 <img width="1600" alt="From Zero to Hero" src="https://user-images.githubusercontent.com/103318089/184580274-219a8e5c-29c7-4c06-b6d5-af4b015880ba.png">
 
->TOC example:
-<!-- Used for the "back to top" links within the document -->
-<div id="contents"></div>
-
-<details>
-  <summary><strong>Table of Contents</strong></summary>
-
-- <a href="#intro">:speech_balloon: Intro</a>
-- <a href="#dependencies">:package: Dependencies</a>
-- <a href="#getting-started">:rocket: Getting Started</a>
-- <a href="#commands">:triangular_flag_on_post: Commands</a>
-- <a href="#technologies-used">:bento: Technologies used</a>
-- <a href="#structure">:wrench: Structure</a>
-- <a href="#build">:hammer: Build</a>
-- <a href="#license">:page_facing_up: License</a>
-- <a href="#author">:penguin: Author</a>
-
-</details>
-
-<div id="intro"></div>
-
 ## :speech_balloon: Intro
 
->This repository contains a collection of material and advanced features of Python programming and the Python Ecosystem including as part of the PYTHON FOR DATA ANALYSIS II course of the Part-Time MASTER IN BUSINESS ANALYTICS AND BIG DATA.
+This repository contains a collection of material and advanced features of Python programming and the Python Ecosystem including as part of the PYTHON FOR DATA ANALYSIS II course of the Part-Time MASTER IN BUSINESS ANALYTICS AND BIG DATA.
 
->This course is intended for people who have learned some basics of Python and are looking to deepen their Python skills and take the next step. Before moving  on to the coding part, I will explain the intuition behind advanced topics. So you can understand not only what it is, but also why we are bringing it up and what the practical use of this concept is. I will try to explain all topics as real examples as possible so that later you can develop something useful from them.
->
-<div id="dependencies"></div>
+This course is intended for people who have learned some basics of Python and are looking to deepen their Python skills and take the next step. Before moving  on to the coding part, I will explain the intuition behind advanced topics. So you can understand not only what it is, but also why we are bringing it up and what the practical use of this concept is. I will try to explain all topics as real examples as possible so that later you can develop something useful from them.
 
-## :package: Dependencies
 
->Dependencies that are needed by people who want to install your project
->For example:
-- [Node.js](https://nodejs.org/en/)
-- [NPM](https://www.npmjs.com/) or [YARN](https://yarnpkg.com/lang/en/)
+## :package: How to use this repository
 
-<a href="#contents">:top: <sub>back to top</sub></a>
+Each Python topic in this repository has the following structure
+
+- Find the topic you want to learn or review
+- Read the linked and/or documented comments  in each script's docstring (like in the example above). 
+- Look at the code samples and validation to see usage examples and expected output. 
+- Modify the code or add a new assertion to see how everything works. 
+- Run tests and analyze the code to see if it works and is written correctly.
+
 
 <div id="getting-started"></div>
 
-## :rocket: Getting started
+## :rocket: Table of Contents
+
+- Functional Programming [Functional Programming](ReadmeFP.md)
+- Object Oriented Programming [a relative link](other_file.md)
+- Object Relational Mapping [a relative link](other_file.md)
+- Github and Pypi [a relative link](other_file.md)
+- Scipy - Statistical Python [a relative link](other_file.md)
+- Web Development [a relative link](other_file.md)
+- Graphing on Web [a relative link](other_file.md)
+
+</details>
 
 ### Npm&Yarn install:
 
