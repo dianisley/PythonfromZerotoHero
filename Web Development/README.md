@@ -184,7 +184,7 @@ Summaryzing, our code looks like this:
         book = db.relationship('book', backref='author', lazy=True)
 
     def __repr__(self):
-        return f'Author("{self.nome}", "{self.sobrenome}")'
+        return f'Author("{self.name}", "{self.lastname}")'
 
 One last step, to create/use the database mentioned in the URI, run the create_all() method.
 
