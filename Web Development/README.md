@@ -7,13 +7,8 @@
 * [Using Templates](#clipboard-using-templates)
 * [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
 * [Key Concepts](#key-key-concepts)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
+
 
 # :bookmark: Introduction to Flask
 
