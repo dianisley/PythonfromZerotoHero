@@ -150,6 +150,20 @@ Flask-SQLAlchemy makes it even simpler to use the SQLAlchemy library with Flask,
 Once successfully installed, we now have the library at our disposal to work with. Let's then create a new file called `models.py` inside the Examples folder, this file that will represent a model of a simple library database.
 
 Let's start with the basic settings:
+    
+    from flask_sqlalchemy import SQLAlchemy
+    app = Flask (__name__)
+    app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
+    db = SQLAlchemy(app)
+    
+    class Author(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(30), nullable=False)
+        lastname = db.Column(db.String(30), nullable=False)
+        book = db.relationship('book', backref='author', lazy=True)
+
+    def __repr__(self):
+        return f'Author("{self.name}", "{self.lastname}")
 
 :one: We first import the necessary libraries, which in this case is Flask itself and Flask-SQLAlchemy
     
@@ -166,22 +180,20 @@ Let's start with the basic settings:
 
 Now that we have our settings established, let's start working effectively in our database, let's create an Author class that will represent an Author table in our database, this will be our model.
 
-Our table is then composed of the following fields:
-
-- **id,** unique integer value representing our primary key
-- **name,** String of up to 30 characters that cannot be null
-- **lastname,** String of up to 30 characters that cannot be null
-- **book,** This field is a relationship with the Book class that we are going to create, the backref argument defines the name of the field that will be added to the objects of the 'many' class that will point back to the 'single' object.
-
-Finally, the `__repr__` magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
-
-Summaryzing, our code looks like this: 
+:four: Our table is then composed of the following fields:
 
     class Author(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         name = db.Column(db.String(30), nullable=False)
         lastname = db.Column(db.String(30), nullable=False)
         book = db.relationship('book', backref='author', lazy=True)
+
+- **id,** unique integer value representing our primary key
+- **name,** String of up to 30 characters that cannot be null
+- **lastname,** String of up to 30 characters that cannot be null
+- **book,** This field is a relationship with the Book class that we are going to create, the backref argument defines the name of the field that will be added to the objects of the 'many' class that will point back to the 'single' object.
+
+:five: Finally, the `__repr__` magic method tells Python how to print the objects of this class, which will be very useful if we need to debug
 
     def __repr__(self):
         return f'Author("{self.name}", "{self.lastname}")'
