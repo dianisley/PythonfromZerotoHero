@@ -23,12 +23,12 @@ Each Python topic in this repository has the following structure
 ## :rocket: Table of Contents
 
 - [Functional Programming](https://github.com/dianisley/PythonfromZerotoHero/blob/78cd7d2c6a70e5a1e5487434cb9d1ec93998c2e1/Functional%20Programming/ReadmeFP)
-- Object Oriented Programming [a relative link](other_file.md)
-- Object Relational Mapping [a relative link](other_file.md)
-- Github and Pypi [a relative link](other_file.md)
-- Scipy - Statistical Python [a relative link](other_file.md)
-- Web Development [a relative link](other_file.md)
-- Graphing on Web [a relative link](other_file.md)
+- [Object Oriented Programming](https://github.com/dianisley/PythonfromZerotoHero/blob/54fd6c8b08b153508f71ffcaa58743ddedb15e8a/Object%20Oriented%20Programming/ReadmeOOP.md)
+- [Object Relational Mapping](https://github.com/dianisley/PythonfromZerotoHero/blob/d925880d32bfb39d8b5f47a11077bf797d41c327/Object%20Relational%20Mapping/ReadmeORM.md)
+- [Github and Pypi](https://github.com/dianisley/PythonfromZerotoHero/blob/00c74bb7491487de6320d1ac5434e7744a8a5e2b/Git%20and%20Pypi/ReadmeGit.md)
+- [Scipy - Statistical Python](https://github.com/dianisley/PythonfromZerotoHero/blob/a20b4138c033af345ef42560760dcb21c0d7fcb3/Scipy%20Statistical%20Python/ReadmeSci.md)
+- [Web Development](https://github.com/dianisley/PythonfromZerotoHero/blob/25107070df977ed2fa7545f342823cf436b80d1a/Web%20Development/ReadmeWD.md)
+- [Graphing on Web](https://github.com/dianisley/PythonfromZerotoHero/blob/944d37d60ec448d30231730e75858cff59c4d9f7/Python%20Dynamic%20Graphing%20on%20Web%20Browsers/ReadmeGW.md)
 
 </details>
 
