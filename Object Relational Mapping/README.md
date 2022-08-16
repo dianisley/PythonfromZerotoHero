@@ -151,7 +151,7 @@ This example creates a SQLite engine to communicate with an database called comp
     
     session.commit()
 
-:ten: Finally, you can close the session with the following command
+🔟: Finally, you can close the session with the following command
 
     session.close()
 
