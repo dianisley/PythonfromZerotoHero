@@ -55,6 +55,20 @@ The [Zen of Python](https://peps.python.org/pep-0020/#the-zen-of-python) tells u
 
 [NumPy/SciPy docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) is one of the four primary types of docstrings avalable.
 
+## Documenting Functions and Methods
+
+Using this syntax, a `numpydoc` style docstring for a function or method is made up of the following elements:
+
+- A short description of what the function or class does
+- A section named `Parameters` that explains the object’s input parameters
+- A section named `Returns` that explains that function’s output
+- Any of the following “optional sections”:
+  - `Examples`: This section is optional, but strongly recommended and encouraged. Within the section we would include one or more examples for how to use the object.
+  - `Notes`: This section provides additional details that help the user understand the function, but were not included in the short description at the beginning. This might include a description of the algorithm or mathematics underlying the function.
+  - `References : If any journal articles, books, or other publications or 3rd party code were consulted when writing the function, this should be documented in this section.
+  - `Raises`: if the function/class might raise an exception when called, the exception along with cases under which the exception is raised should be documented. 
+  - `See Also`: if the function/class is related to another object, we should specify this relation in a See Also section.
+
 For instance after importing the stats module you can run the following code:
 
     help(scipy.stats.bayes_mvs)
@@ -105,14 +119,26 @@ bayes_mvs(data, alpha=0.9)
     T.E. Oliphant, "A Bayesian perspective on estimating mean, variance, and
     standard-deviation from data", http://hdl.handle.net/1877/438, 2006.
 ```
+## Documenting Classes
 
-https://github.com/Pegah-Ardehkhani/Statistics-and-Probability-in-Python.git
+The `numpydoc` standard for documenting classes is very similar. The key components are (this all goes the first line of the docstring that is below the line containing the `class` keyword)
+
+- A short description of what the class does
+- A `Parameters` section that describes the parameters for the class’s `__init__` function
+- An `Attributes` section that describes all the attributes of the class. This replaces the `Returns` section we saw above for functions and methods.
+- Any of the optional sections outlined above in addition to an optional section describing the `Methods` that are implemented specifically for this class.
+
+# Scipy in Action
+
+The following repository contains extended applcations of the Scipy.Stats library:
+
+https://github.com/dianisley/Statistics-and-Probability-in-Python.git
+
+
 
 
 # Acknowledgements
-This project was based on 
-- [A Comprehensive Guide on using Flask for Data Science](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-using-flask-for-data-science/#:~:text=Flask%20provides%20different%20libraries%2C%20tools,or%20any%20commercial%20website%2C%20etc)
-- [Flask SQLAlchemy](https://pythonbasics.org/flask-sqlalchemy/)
-- [Flask in Production: Minimal Web APIs](https://towardsdatascience.com/flask-in-production-minimal-web-apis-2e0859736df)
-- [Rendering Pages in Flask Using Jinja](https://hackersandslackers.com/flask-jinja-templates/)
+This project was based on:
+- https://github.com/Pegah-Ardehkhani/Statistics-and-Probability-in-Python.git
+
 
