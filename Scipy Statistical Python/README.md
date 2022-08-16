@@ -4,7 +4,7 @@
 * [Intro to Scipy](#bookmark-introduction-to-scipy)
 * [Why Scipy](#gem-why-scipy)
 * [Getting Start](#wrench-getting-start)
-
+* [About Scipy Docstring](#page_facing_up-about-scipy-docstring)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -31,10 +31,80 @@ We have functions for both continuous and discrete variables and can work with d
 
 # :wrench: Getting Start
 
+## Installation
 
+To use pip can use the below command to install Scipy package:
 
-## Installation 
+    pip install scipy
 
+After that you can import the stats modules:
+
+    import numpy as np
+    from scipy import stats
+
+# :page_facing_up: About Scipy Docstring
+
+A Python docstring is a string used to document a Python module, class, function or method, so programmers can understand what it does without having to read the details of the implementation.
+Some standards exist about docstrings, so they are easier to read, and they can be exported to other formats such as html or pdf, including:
+
+- [PEP-8 Style](https://www.python.org/dev/peps/pep-0008) Guide for Python Code
+- [PEP-257](https://www.python.org/dev/peps/pep-0257) Docstring Conventions
+- [NumPy](https://numpydoc.readthedocs.io/en/latest/format.html) docstring standard
+
+The [Zen of Python](https://peps.python.org/pep-0020/#the-zen-of-python) tells us that "Readability counts" and "Explicit is better than implicit." These are necessary characteristics of Python. When we write code, we do it for end-users, developers, and ourselves.
+
+[NumPy/SciPy docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) is one of the four primary types of docstrings avalable.
+
+For instance after importing the stats module you can run the following code:
+
+    help(scipy.stats.bayes_mvs)
+
+getting the following outcome
+```
+Help on function bayes_mvs in module scipy.stats.morestats:
+
+bayes_mvs(data, alpha=0.9)
+    Bayesian confidence intervals for the mean, var, and std.
+    
+    Parameters
+    ----------
+    data : array_like
+        Input data, if multi-dimensional it is flattened to 1-D by `bayes_mvs`.
+        Requires 2 or more data points.
+    alpha : float, optional
+        Probability that the returned confidence interval contains
+        the true parameter.
+    
+    Returns
+    -------
+    mean_cntr, var_cntr, std_cntr : tuple
+        The three results are for the mean, variance and standard deviation,
+        respectively.  Each result is a tuple of the form::
+    
+            (center, (lower, upper))
+    
+        with `center` the mean of the conditional pdf of the value given the
+        data, and `(lower, upper)` a confidence interval, centered on the
+        median, containing the estimate to a probability `alpha`.
+    
+    Notes
+    -----
+    Each tuple of mean, variance, and standard deviation estimates represent
+    the (center, (lower, upper)) with center the mean of the conditional pdf
+    of the value given the data and (lower, upper) is a confidence interval
+    centered on the median, containing the estimate to a probability
+    `alpha`.
+    
+    Converts data to 1-D and assumes all data has the same mean and variance.
+    Uses Jeffrey's prior for variance and std.
+    
+    Equivalent to tuple((x.mean(), x.interval(alpha)) for x in mvsdist(dat))
+    
+    References
+    ----------
+    T.E. Oliphant, "A Bayesian perspective on estimating mean, variance, and
+    standard-deviation from data", http://hdl.handle.net/1877/438, 2006.
+```
 
 https://github.com/Pegah-Ardehkhani/Statistics-and-Probability-in-Python.git
 
