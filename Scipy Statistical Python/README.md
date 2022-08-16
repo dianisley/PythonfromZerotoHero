@@ -36,6 +36,8 @@ We have functions for both continuous and discrete variables and can work with d
 ## Installation 
 
 
+https://github.com/Pegah-Ardehkhani/Statistics-and-Probability-in-Python.git
+
 
 # Acknowledgements
 This project was based on 
