@@ -53,25 +53,25 @@ Next step will be installing the database drivers you wil lbe connecting with. B
 
 Whenever we want to use SQLAlchemy to interact with a database, we need to create an Engine. Engines, on SQLAlchemy, are used to manage two crucial factors: Pools and Dialects (we wil lreveiew these concepts later on), SQLAlchemy uses them to interact with DBAPI functions.
 
-To create an engine and start interacting with databases, we have to import the create_engine function from the sqlalchemy library and issue a call to it:
+:one: To create an engine and start interacting with databases, we have to import the create_engine function from the sqlalchemy library and issue a call to it:
 
     from sqlalchemy import create_engine
     engine = create_engine('sqlite:///./company_balancesheet_database.db')
 
 This example creates a SQLite engine to communicate with an database called company_balancesheer_database.db stored in the current directory via a relative path in the second line. Note that, creating an engine does not connect to the database instantly. This process is postponed to when it's needed (like when we submit a query, or when create/update a row in a table).
 
-## Modelling
+## Modelling the Database
 
-We will be using the declarative extensions of SQLAlchemy. `declarative_base` is a factory function, that returns a base class, and the entities are going to inherit from it. Once the definition of the class is done, the Table and mapper will be generated automatically.
+:two: We will be using the declarative extensions of SQLAlchemy. `declarative_base` is a factory function, that returns a base class, and the entities are going to inherit from it. Once the definition of the class is done, the Table and mapper will be generated automatically.
 
     from sqlalchemy.ext.declarative import declarative_base
     Base = declarative_base()
 
-The declarative mapping below makes use of Column objects to define the basic units of data storage that will be in the database. 
+:three: The declarative mapping below makes use of Column objects to define the basic units of data storage that will be in the database. 
 
     from sqlalchemy import Column, Integer, String, Float
 
-With the declarative base class, the typical form of mapping includes an attribute `__tablename__` that indicates the name of a Table that should be generated along with the mapping:
+:four: With the declarative base class, the typical form of mapping includes an attribute `__tablename__` that indicates the name of a Table that should be generated along with the mapping:
 
     class Balancesheet(Base):
         __tablename__ = 'balance_sheet'
@@ -102,56 +102,56 @@ With the declarative base class, the typical form of mapping includes an attribu
         p49100_Profit_h2 = Column(Float())
         detailed_status = Column(String(150))
 
-The `declarative_base()` base class contains a MetaData object where newly defined Table objects are collected. This object is intended to be accessed directly for MetaData-specific operations. Such as, to issue CREATE statements for all tables:
+:five: The `declarative_base()` base class contains a MetaData object where newly defined Table objects are collected. This object is intended to be accessed directly for MetaData-specific operations. Such as, to issue CREATE statements for all tables:
 
     Base.metadata.create_all(engine)
 
 ## Interacting with the database
 
-In order to interact with the database, we need to obtain its handle. A session object is the handle to database. Session class is defined using sessionmaker() – a configurable session factory method which is bound to the engine object created earlier.
+:six: In order to interact with the database, we need to obtain its handle. A session object is the handle to database. Session class is defined using sessionmaker() – a configurable session factory method which is bound to the engine object created earlier.
 
     from sqlalchemy.orm import sessionmaker
     DBSession = sessionmaker(bind=engine)
     
-The session object is then set up using its default constructor as follows:    
+:seven: The session object is then set up using its default constructor as follows:    
     
     session = DBSession()
     
-Now that we have declared Balancesheet class that has been mapped to balance_sheet table. We have to declare an object of this class and persistently add it to the table by add() method of session object.
+:eight: Now that we have declared Balancesheet class that has been mapped to balance_sheet table. We have to declare an object of this class and persistently add it to the table by add() method of session object.
 
     for i in range(len(df)):
     company = Balancesheet(nif_fical_number_id=df['nif_fical_number_id'].iloc[i],
-                           company_name=df['company_name'].iloc[i],
-                           CNAE=int(df['CNAE'].iloc[i]),
-                           p10000_TotalAssets_h0=df['p10000_TotalAssets_h0'].iloc[i],
-                           p10000_TotalAssets_h1=df['p10000_TotalAssets_h1'].iloc[i],
-                           p10000_TotalAssets_h2=df['p10000_TotalAssets_h2'].iloc[i],
-                           p20000_OwnCapital_h0=df['p20000_OwnCapital_h0'].iloc[i],
-                           p20000_OwnCapital_h1=df['p20000_OwnCapital_h1'].iloc[i],
-                           p20000_OwnCapital_h2=df['p20000_OwnCapital_h2'].iloc[i],
-                           p31200_ShortTermDebt_h0=df['p31200_ShortTermDebt_h0'].iloc[i],
-                           p31200_ShortTermDebt_h1=df['p31200_ShortTermDebt_h1'].iloc[i],
-                           p31200_ShortTermDebt_h2=df['p31200_ShortTermDebt_h2'].iloc[i],
-                           p32300_LongTermDebt_h0=df['p32300_LongTermDebt_h0'].iloc[i],
-                           p32300_LongTermDebt_h1=df['p32300_LongTermDebt_h1'].iloc[i],
-                           p32300_LongTermDebt_h2=df['p32300_LongTermDebt_h2'].iloc[i],
-                           p40100_40500_SalesTurnover_h0=df['p40100_40500_SalesTurnover_h0'].iloc[i],
-                           p40100_40500_SalesTurnover_h1=df['p40100_40500_SalesTurnover_h1'].iloc[i],
-                           p40100_40500_SalesTurnover_h2=df['p40100_40500_SalesTurnover_h2'].iloc[i],
-                           p40800_Amortization_h0=df['p40800_Amortization_h0'].iloc[i],
-                           p40800_Amortization_h1=df['p40800_Amortization_h1'].iloc[i],
-                           p40800_Amortization_h2=df['p40800_Amortization_h2'].iloc[i],
-                           p49100_Profit_h0=df['p49100_Profit_h0'].iloc[i],
-                           p49100_Profit_h1=df['p49100_Profit_h1'].iloc[i],
-                           p49100_Profit_h2=df['p49100_Profit_h2'].iloc[i],
-                           detailed_status=df['detailed_status'].iloc[i])
+        company_name=df['company_name'].iloc[i],
+        CNAE=int(df['CNAE'].iloc[i]),
+        p10000_TotalAssets_h0=df['p10000_TotalAssets_h0'].iloc[i],
+        p10000_TotalAssets_h1=df['p10000_TotalAssets_h1'].iloc[i],
+        p10000_TotalAssets_h2=df['p10000_TotalAssets_h2'].iloc[i],
+        p20000_OwnCapital_h0=df['p20000_OwnCapital_h0'].iloc[i],
+        p20000_OwnCapital_h1=df['p20000_OwnCapital_h1'].iloc[i],
+        p20000_OwnCapital_h2=df['p20000_OwnCapital_h2'].iloc[i],
+        p31200_ShortTermDebt_h0=df['p31200_ShortTermDebt_h0'].iloc[i],
+        p31200_ShortTermDebt_h1=df['p31200_ShortTermDebt_h1'].iloc[i],
+        p31200_ShortTermDebt_h2=df['p31200_ShortTermDebt_h2'].iloc[i],
+        p32300_LongTermDebt_h0=df['p32300_LongTermDebt_h0'].iloc[i],
+        p32300_LongTermDebt_h1=df['p32300_LongTermDebt_h1'].iloc[i],
+        p32300_LongTermDebt_h2=df['p32300_LongTermDebt_h2'].iloc[i],
+        p40100_40500_SalesTurnover_h0=df['p40100_40500_SalesTurnover_h0'].iloc[i],
+        p40100_40500_SalesTurnover_h1=df['p40100_40500_SalesTurnover_h1'].iloc[i],
+        p40100_40500_SalesTurnover_h2=df['p40100_40500_SalesTurnover_h2'].iloc[i],
+        p40800_Amortization_h0=df['p40800_Amortization_h0'].iloc[i],
+        p40800_Amortization_h1=df['p40800_Amortization_h1'].iloc[i],
+        p40800_Amortization_h2=df['p40800_Amortization_h2'].iloc[i],
+        p49100_Profit_h0=df['p49100_Profit_h0'].iloc[i],
+        p49100_Profit_h1=df['p49100_Profit_h1'].iloc[i],
+        p49100_Profit_h2=df['p49100_Profit_h2'].iloc[i],
+        detailed_status=df['detailed_status'].iloc[i])
     session.add(company)
     
-Note that this transaction is pending until the same is flushed using commit() method.
+:nine: Note that this transaction is pending until the same is flushed using commit() method.
     
     session.commit()
 
-Finally, you can close the session with the following command
+:ten: Finally, you can close the session with the following command
 
     session.close()
 
