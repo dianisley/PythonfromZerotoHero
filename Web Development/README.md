@@ -7,6 +7,7 @@
 * [Using Templates](#clipboard-using-templates)
 * [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
 * [Using WTF Templates](#clipboard-using-wtf-templates)
+* [Flask in Business](#briefcase-flask-in-business)
 * [Key Concepts](#key-key-concepts)
 * [Acknowledgements](#acknowledgements)
 
@@ -316,6 +317,12 @@ Now that we have our form defined, let's define two new routes to try out. Again
 Now we need to create our templates so that we can display the form and the submitted data, for that we are going to create the [wtf](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/wtf.html) and [thankyou](https://github.com/dianisley/PythonfromZerotoHero/blob/f578e8ffa3cd4b5bca451805e46b47c7b7416787/Web%20Development/template/thankyou.html) files in the template folder.
 
 Finally we can run our application with the `python app.py` command, let's navigate to http://127.0.0.1:5000/wtf to see our form. Feel free to experiment with submissions and test the form and to delve deeper into the tools visit their respective documentation: [WTForms](https://wtforms.readthedocs.io/en/stable/) and [Flask-WTF](https://flask-wtf.readthedocs.io/en/1.0.x/)
+
+# :briefcase: Flask in Business
+
+According to https://stackshare.io/flask Websites typically use the Flask framework for backend web development. These sites range from social media to online marketplaces to educational organizations. Below top websites that use Flask within their technology stack.
+
+<img width="1600" alt="Screenshot 2022-08-16 164011" src="https://user-images.githubusercontent.com/103318089/184908320-634975be-a704-46bb-898c-ee5f792c8f08.png">
 
 # :key: Key Concepts
 
