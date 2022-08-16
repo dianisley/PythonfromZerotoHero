@@ -102,6 +102,59 @@ With the declarative base class, the typical form of mapping includes an attribu
         p49100_Profit_h2 = Column(Float())
         detailed_status = Column(String(150))
 
+The `declarative_base()` base class contains a MetaData object where newly defined Table objects are collected. This object is intended to be accessed directly for MetaData-specific operations. Such as, to issue CREATE statements for all tables:
+
+    Base.metadata.create_all(engine)
+
+## Interacting with the database
+
+In order to interact with the database, we need to obtain its handle. A session object is the handle to database. Session class is defined using sessionmaker() – a configurable session factory method which is bound to the engine object created earlier.
+
+    from sqlalchemy.orm import sessionmaker
+    DBSession = sessionmaker(bind=engine)
+    
+The session object is then set up using its default constructor as follows:    
+    
+    session = DBSession()
+    
+Now that we have declared Balancesheet class that has been mapped to balance_sheet table. We have to declare an object of this class and persistently add it to the table by add() method of session object.
+
+    for i in range(len(df)):
+    company = Balancesheet(nif_fical_number_id=df['nif_fical_number_id'].iloc[i],
+                           company_name=df['company_name'].iloc[i],
+                           CNAE=int(df['CNAE'].iloc[i]),
+                           p10000_TotalAssets_h0=df['p10000_TotalAssets_h0'].iloc[i],
+                           p10000_TotalAssets_h1=df['p10000_TotalAssets_h1'].iloc[i],
+                           p10000_TotalAssets_h2=df['p10000_TotalAssets_h2'].iloc[i],
+                           p20000_OwnCapital_h0=df['p20000_OwnCapital_h0'].iloc[i],
+                           p20000_OwnCapital_h1=df['p20000_OwnCapital_h1'].iloc[i],
+                           p20000_OwnCapital_h2=df['p20000_OwnCapital_h2'].iloc[i],
+                           p31200_ShortTermDebt_h0=df['p31200_ShortTermDebt_h0'].iloc[i],
+                           p31200_ShortTermDebt_h1=df['p31200_ShortTermDebt_h1'].iloc[i],
+                           p31200_ShortTermDebt_h2=df['p31200_ShortTermDebt_h2'].iloc[i],
+                           p32300_LongTermDebt_h0=df['p32300_LongTermDebt_h0'].iloc[i],
+                           p32300_LongTermDebt_h1=df['p32300_LongTermDebt_h1'].iloc[i],
+                           p32300_LongTermDebt_h2=df['p32300_LongTermDebt_h2'].iloc[i],
+                           p40100_40500_SalesTurnover_h0=df['p40100_40500_SalesTurnover_h0'].iloc[i],
+                           p40100_40500_SalesTurnover_h1=df['p40100_40500_SalesTurnover_h1'].iloc[i],
+                           p40100_40500_SalesTurnover_h2=df['p40100_40500_SalesTurnover_h2'].iloc[i],
+                           p40800_Amortization_h0=df['p40800_Amortization_h0'].iloc[i],
+                           p40800_Amortization_h1=df['p40800_Amortization_h1'].iloc[i],
+                           p40800_Amortization_h2=df['p40800_Amortization_h2'].iloc[i],
+                           p49100_Profit_h0=df['p49100_Profit_h0'].iloc[i],
+                           p49100_Profit_h1=df['p49100_Profit_h1'].iloc[i],
+                           p49100_Profit_h2=df['p49100_Profit_h2'].iloc[i],
+                           detailed_status=df['detailed_status'].iloc[i])
+    session.add(company)
+    
+Note that this transaction is pending until the same is flushed using commit() method.
+    
+    session.commit()
+
+Finally, you can close the session with the following command
+
+    session.close()
+
 # :key: Key Concepts
 
 
