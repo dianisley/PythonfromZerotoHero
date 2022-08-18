@@ -55,24 +55,25 @@ Next step will be installing the database drivers you will be connecting with. B
 
 ## Connecting to a Database
 
-Whenever we want to use SQLAlchemy to interact with a database, we need to create an Engine. Engines, on SQLAlchemy, are used to manage two crucial factors: Pools and Dialects (we wil lreview these concepts later on), SQLAlchemy uses them to interact with DBAPI functions.
+Whenever we want to use SQLAlchemy to interact with a database, we need to create an Engine. Engines, on SQLAlchemy, are used to manage two crucial factors: Pools and Dialects (we will review these concepts later on), SQLAlchemy uses them to interact with DBAPI functions.
 
-:one: To create an engine and start interacting with databases, we have to import the create_engine function from the sqlalchemy library and issue a call to it:
+:one: To create an engine and start interacting with databases, we have to import the `create_engine` function from the sqlalchemy library and issue a call to it:
 
     from sqlalchemy import create_engine
     engine = create_engine('sqlite:///./company_balancesheet_database.db')
 
 This example creates a SQLite engine to communicate with an database called company_balancesheet_database.db stored in the current directory via a relative path in the second line. 
+
 Note that, creating an engine does not connect to the database instantly. This process is postponed to when it's needed (like when we submit a query, or when create/update a row in a table).
 
 ## Modelling the Database
 
-:two: We will be using the declarative extensions of SQLAlchemy. `declarative_base` is a factory function, that returns a base class, and the entities are going to inherit from it. Once the definition of the class is done, the Table and mapper will be generated automatically.
+:two: We will be then using the declarative extensions of SQLAlchemy. `declarative_base` is a factory function, that returns a base class, and the entities are going to inherit from it. Once the definition of the class is done, the Table and mapper will be generated automatically.
 
     from sqlalchemy.ext.declarative import declarative_base
     Base = declarative_base()
 
-:three: The declarative mapping below makes use of Column objects to define the basic units of data storage that will be in the database. 
+:three: The declarative mapping below makes use of Column objects to define the basic units of data storage that will be in the database: 
 
     from sqlalchemy import Column, Integer, String, Float
 
@@ -107,13 +108,13 @@ Note that, creating an engine does not connect to the database instantly. This p
         p49100_Profit_h2 = Column(Float())
         detailed_status = Column(String(150))
 
-:five: The `declarative_base()` base class contains a MetaData object where newly defined Table objects are collected. This object is intended to be accessed directly for MetaData-specific operations. Such as, to issue CREATE statements for all tables:
+:five: The `declarative_base()` class contains a MetaData object where newly defined Table objects are collected. This object is intended to be accessed directly for MetaData-specific operations, such as, issuing CREATE statements for all tables:
 
     Base.metadata.create_all(engine)
 
 ## Interacting with the database
 
-:six: In order to interact with the database, we need to obtain its handle. A session object is the handle to database. Session class is defined using sessionmaker() – a configurable session factory method which is bound to the engine object created earlier.
+:six: In order to interact with the database, we need to obtain its handle. A session object is the handle to database. Session class is defined using sessionmaker() – a configurable session factory method which is bound to the engine object created earlier:
 
     from sqlalchemy.orm import sessionmaker
     DBSession = sessionmaker(bind=engine)
@@ -122,7 +123,7 @@ Note that, creating an engine does not connect to the database instantly. This p
     
     session = DBSession()
     
-:eight: Now that we have declared Balancesheet class that has been mapped to balance_sheet table. We have to declare an object of this class and persistently add it to the table by add() method of session object.
+:eight: Now that we have declared Balancesheet class that has been mapped to balance_sheet table. We have to declare an object of this class and persistently add it to the table by add() method of session object:
 
     for i in range(len(df)):
     company = Balancesheet(nif_fical_number_id=df['nif_fical_number_id'].iloc[i],
@@ -150,6 +151,7 @@ Note that, creating an engine does not connect to the database instantly. This p
         p49100_Profit_h1=df['p49100_Profit_h1'].iloc[i],
         p49100_Profit_h2=df['p49100_Profit_h2'].iloc[i],
         detailed_status=df['detailed_status'].iloc[i])
+    
     session.add(company)
     
 :nine: Note that this transaction is pending until the same is flushed using commit() method.
@@ -159,6 +161,10 @@ Note that, creating an engine does not connect to the database instantly. This p
 🔟: Finally, you can close the session with the following command
 
     session.close()
+    
+Complete code can be found [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/03_bd_orm_saving_data_to_db_part2.py)
+An additional example for how to add rows and filter the data base [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/cars_example.py)
+
 
 # :briefcase: SQLAlchemy in Business
 
