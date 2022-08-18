@@ -131,7 +131,7 @@ The `numpydoc` standard for documenting classes is very similar. The key compone
 
 # :books: Scipy in Action
 
-The following repository contains extended applcations of the Scipy.Stats library:
+The following repository contains extended applications of the Scipy.Stats library:
 
 https://github.com/dianisley/Statistics-and-Probability-in-Python.git
 
