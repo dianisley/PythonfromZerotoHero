@@ -2,12 +2,14 @@
 
 
 # Table of Contents
+
 * [Introduction to Object Relational Mapping](#bookmark-introduction-to-object-relational-mapping)
 * [Introduction to SQLAlchemy](#bookmark-introduction-to-sqlalchemy)
 * [Why SQLAlchemy](#gem-why-sqlalchemy)
+* [Running our first SQLAlchemy Project](#wrench-running-our-first-sqlalchemy-project)
+* [SQLAlchemy in Business](#briefcase-sqlalchemy-in-business)
 * [Key Concepts](#key-key-concepts)
 * [Acknowledgements](#acknowledgements)
-
 
 # :bookmark: Introduction to Object Relational Mapping
 
@@ -39,7 +41,7 @@ SQLAlchemy is the most used ORM as per the last [Python Developer Survey 2021](h
 
 - **Great documentation**: here are tutorials which walk you from quick start examples through to advanced features. These are coupled with a comprehensive API reference.
 
-# :wrench: Getting Start
+# :wrench: Running our first SQLAlchemy Project
 
 ## Installation 
 
@@ -47,18 +49,19 @@ When pip is available, the distribution can be downloaded from PyPI and installe
 
     pip install SQLAlchemy
 
-Next step will be installing the database drivers you wil lbe connecting with. By default SQLAchemy works with [SQLite](https://www.sqlite.org/index.html).
+Next step will be installing the database drivers you will be connecting with. By default SQLAchemy works with [SQLite](https://www.sqlite.org/index.html).
 
 ## Connecting to a Database
 
-Whenever we want to use SQLAlchemy to interact with a database, we need to create an Engine. Engines, on SQLAlchemy, are used to manage two crucial factors: Pools and Dialects (we wil lreveiew these concepts later on), SQLAlchemy uses them to interact with DBAPI functions.
+Whenever we want to use SQLAlchemy to interact with a database, we need to create an Engine. Engines, on SQLAlchemy, are used to manage two crucial factors: Pools and Dialects (we wil lreview these concepts later on), SQLAlchemy uses them to interact with DBAPI functions.
 
 :one: To create an engine and start interacting with databases, we have to import the create_engine function from the sqlalchemy library and issue a call to it:
 
     from sqlalchemy import create_engine
     engine = create_engine('sqlite:///./company_balancesheet_database.db')
 
-This example creates a SQLite engine to communicate with an database called company_balancesheer_database.db stored in the current directory via a relative path in the second line. Note that, creating an engine does not connect to the database instantly. This process is postponed to when it's needed (like when we submit a query, or when create/update a row in a table).
+This example creates a SQLite engine to communicate with an database called company_balancesheet_database.db stored in the current directory via a relative path in the second line. 
+Note that, creating an engine does not connect to the database instantly. This process is postponed to when it's needed (like when we submit a query, or when create/update a row in a table).
 
 ## Modelling the Database
 
@@ -154,6 +157,13 @@ This example creates a SQLite engine to communicate with an database called comp
 🔟: Finally, you can close the session with the following command
 
     session.close()
+
+# :briefcase: SQLAlchemy in Business
+
+According to https://stackshare.io/sqlalchemy Websites, below top websites that use SQLAlchemy within their technology stack.
+
+<img width="1600" alt="Screenshot 2022-08-16 165238" src="https://user-images.githubusercontent.com/103318089/185304169-97499256-acf9-47e6-a035-c2841ae04485.png">
+
 
 # :key: Key Concepts
 
