@@ -13,7 +13,9 @@
 
 # :bookmark: Introduction to Object Relational Mapping
 
-There are two ways you can connect a python application to a relational database: a low-level approach and a high-level one. The low-level approach involves installing and setting up the relational database management system on your local machine, and writing actual SQL commands to carry out database operations. The alternative approach is to use an object relational mapper (ORM for short). An ORM is a technique that creates a layer between the language and a database engine, helping programmers work with data and define regular Python objects and methods and translates them into SQL database instructions for you.
+There are two ways you can connect a python application to a relational database: a low-level approach and a high-level one:
+- The low-level approach involves installing and setting up the relational database management system on your local machine, and writing actual SQL commands to carry out database operations. 
+- The alternative approach is to use an object relational mapper (ORM for short). An ORM is a technique that creates a layer between the language and a database engine, helping programmers work with data and define regular Python objects and methods and translates them into SQL database instructions for you.
 
 ORM generates a level of logic without relying on the specifics of the code's foundation, allowing developers to create database-agnostic code to communicate with a wide variety of database engines.
 
