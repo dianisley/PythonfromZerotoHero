@@ -162,8 +162,8 @@ Note that, creating an engine does not connect to the database instantly. This p
 
     session.close()
     
-Complete code can be found [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/03_bd_orm_saving_data_to_db_part2.py)
-An additional example for how to add rows and filter the data base [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/cars_example.py)
+- Complete code can be found [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/03_bd_orm_saving_data_to_db_part2.py)
+- An additional example for how to add rows and filter the data base [here](https://github.com/dianisley/PythonfromZerotoHero/blob/9d34feac3bd28573721481514ee1ba562746b665/Object%20Relational%20Mapping/cars_example.py)
 
 
 # :briefcase: SQLAlchemy in Business
