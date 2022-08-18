@@ -5,6 +5,7 @@
 * [Why Scipy](#gem-why-scipy)
 * [Getting Start](#wrench-getting-start)
 * [About Scipy Docstring](#page_facing_up-about-scipy-docstring)
+* [Scipy in Action](#books_scipy_in_action)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -128,7 +129,7 @@ The `numpydoc` standard for documenting classes is very similar. The key compone
 - An `Attributes` section that describes all the attributes of the class. This replaces the `Returns` section we saw above for functions and methods.
 - Any of the optional sections outlined above in addition to an optional section describing the `Methods` that are implemented specifically for this class.
 
-# Scipy in Action
+# :books: Scipy in Action
 
 The following repository contains extended applcations of the Scipy.Stats library:
 
