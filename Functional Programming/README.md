@@ -1,6 +1,8 @@
+#WORK IN PROGRESS :construction::construction::construction::construction::construction::construction::construction::construction::construction::construction::construction::construction:
+
 <img width="1600" alt="Functional Programming" src="https://user-images.githubusercontent.com/103318089/185545520-c7c323b6-b57d-4ceb-8089-45a3553893a4.png">
 
-:construction::construction::construction::construction::construction::construction::construction::construction::construction::construction::construction::construction:
+
 # Table of Contents
 * [About Programming Paradigms](#robot-about-programming-paradigms)
 * [Intro to Functional Programming](#bookmark-introduction-to-functional-programming)
@@ -36,13 +38,17 @@ Functional programming is a form of declarative paradigm, it decomposes a proble
 
 # :snake: Functional Programming with Python
 
+:construction:
+
 # :wrench: Practice
+
+:construction:
+
 
 # :key: Key Concepts
 
-
+:construction:
 
 # Acknowledgements
 This project was based on 
 - https://github.com/parulnith/Elements-of-Functional-Programming-in-Python
-- 
