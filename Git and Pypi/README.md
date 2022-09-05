@@ -3,17 +3,13 @@
 # Table of Contents
 * [Intro to Pypi](#bookmark-introduction-to-flask)
 * [Getting Start](#wrench-getting-start)
-* [Using Templates](#clipboard-using-templates)
-* [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
-* [Using WTF Templates](#clipboard-using-wtf-templates)
-* [Flask in Business](#briefcase-flask-in-business)
-* [Key Concepts](#key-key-concepts)
 * [Acknowledgements](#acknowledgements)
 
+# [Intro to Pypi](#bookmark-introduction-to-flask)
 
 # [Getting Start](#wrench-getting-start)
 
-## :one:
+##  Step :one:
 
 Go to the following two websites to register your own account, respectively.
 - PyPI test: https://test.pypi.org/
@@ -22,7 +18,7 @@ Go to the following two websites to register your own account, respectively.
 Note: I highly recommend trying your package on the test site first to avoid mistakes in the uploading process. Since any change, you make to your package on PyPI is not revertable, uploading errors may lead to a malfunctioning patch for your package. You want to avoid that!!
 
 
-## Step 2
+## Step :two:
 
 Fork this repository to your own GitHub account and make it available in your local. You can make the most changes on GitHub, but you will need to publish your package via cmd with those files available in local.
 
@@ -83,7 +79,7 @@ Consider adding a list in your "\_\_init\_\_.py", so that the users can check wh
     ]
     
 
-## Step 3
+## Step :three:
 
 Install the following python package in your cmd:
 
@@ -96,7 +92,7 @@ pip install pytest # optional
 
 You will need them later.
 
-## Step 4
+## Step :four:
 
 Do the following changes in ANY order you want:
 
@@ -110,7 +106,7 @@ Do the following changes in ANY order you want:
 5. Optional: create a "test.py" and put the file in the tests folder. Or you can remove the whole folder if you are confident that everything works great in your module.
 6. Delete everything in this "README.md" file, and update the file with the long decription of your package.
 
-## Step 5
+## Step :five:
 
 You have multiple choices for step 5 to perform the rest of the steps. Here are two examples:
 
@@ -129,7 +125,7 @@ D:\> cd D:\my_works\Your-First-Python-Package-on-PyPI
 C:\User\Yourname> jupyter notebook --notebook-dir D:/my_works/Your-First-Python-Package-on-PyPI
 ```
 
-## Step 6
+## Step :six
 
 In this step, we will use the following code in cmd/terminal to build your package:
 ```css
@@ -159,7 +155,7 @@ Checking distribution dist/TheNameofYourPackage-TheVersionofYourPackage-1.0.0-py
 Checking distribution dist/TheNameofYourPackage-TheVersionofYourPackage.tar.gz: Passed
 ```
 
-## Step 7
+## Step .seven:
 
 Upload your package to TestPyPI:
 ```css
@@ -181,5 +177,6 @@ By this point, your package should be officially online and can be "pip install"
 - You can always find your package on PyPi here: ___ht<span>tp://</span>pypi.org/project/YOURPACKAGENAME/___
 - Do not publish packages arbitrarily. Even though there are no hard restrictions on what you can or cannot publish, make sure you are uploading something that is actually meaningful and someone will benefit from your work. 
 
+# [Acknowledgements](#acknowledgements)
 
 Reference Blog: https://towardsdatascience.com/an-end-to-end-guide-to-publish-your-python-package-bdb56639662c
