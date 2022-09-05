@@ -125,7 +125,7 @@ D:\> cd D:\my_works\Your-First-Python-Package-on-PyPI
 C:\User\Yourname> jupyter notebook --notebook-dir D:/my_works/Your-First-Python-Package-on-PyPI
 ```
 
-## Step :six
+## Step :six:
 
 In this step, we will use the following code in cmd/terminal to build your package:
 ```css
@@ -155,7 +155,7 @@ Checking distribution dist/TheNameofYourPackage-TheVersionofYourPackage-1.0.0-py
 Checking distribution dist/TheNameofYourPackage-TheVersionofYourPackage.tar.gz: Passed
 ```
 
-## Step .seven:
+## Step :seven:
 
 Upload your package to TestPyPI:
 ```css
