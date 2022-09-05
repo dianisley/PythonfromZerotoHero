@@ -1,10 +1,19 @@
 <img width="1600" alt="Screenshot 2022-08-28 170028" src="https://user-images.githubusercontent.com/103318089/188353041-f4b39f52-0ed1-4c04-a352-9e047cfc9589.png">
 
+# Table of Contents
+* [Intro to Pypi](#bookmark-introduction-to-flask)
+* [Getting Start](#wrench-getting-start)
+* [Using Templates](#clipboard-using-templates)
+* [Connecting Flask app to a Database](#link-connecting-flask-app-to-a-database)
+* [Using WTF Templates](#clipboard-using-wtf-templates)
+* [Flask in Business](#briefcase-flask-in-business)
+* [Key Concepts](#key-key-concepts)
+* [Acknowledgements](#acknowledgements)
 
 
+# [Getting Start](#wrench-getting-start)
 
-
-## Step 1
+## :one:
 
 Go to the following two websites to register your own account, respectively.
 - PyPI test: https://test.pypi.org/
